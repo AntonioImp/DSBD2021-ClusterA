@@ -1,9 +1,9 @@
 [submodule "Pagamenti2"]
 	path = Pagamenti2
 	url = https://github.com/AntonioImp/gestionepagamenti.git
-[submodule "Prodotti"]
+[submodule "microserviziProdotti1A"]
 	path = Prodotti
-	url = https://github.com/gianluca7cristaudo/MicroserviceOrder1A
+	url = https://github.com/giuseppesanto67/microserviziProdotti1A.git
 [submodule "Ordini"]
 	path = Ordini
 	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
