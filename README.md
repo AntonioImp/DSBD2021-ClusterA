@@ -23,6 +23,8 @@
 ```
 
 ## Scheme:
+![Scheme](http://www.plantuml.com/plantuml/png/RPCnJ_Cm48Rt-nMMlhdfruuTK44L30mWLImiw9fSMwj979mBg4j_EscDTSwPCUzZwtcLLrxtZ9w7fWOisNb3RVNMamVRClazbcJkE_k4JDzu1lWSQ23pZFiJGkcQphNKidbtxaJKaGT0ptQynUOL3zYCq2uasnvjrzdsi3ttJ4rorhlACTi_RYybU_6LRPCpZpZKl26cQ-yUe4B67VQKg3SFaaxbAOdwD9C2QHegZ0dqenCFKzUNguU68b92ZSMgWQWrYluOm-zOPZRxk4jsCYjpPEvMytbP3wFSOr7rkwfO_byk2ii0SZHSJSPII6-ci4oN0LbGeJWaY7NC_qrdcsglF1ymkgyq7L7KWQHJ1lSjbp5JSxoYLzNsl99CB5rKjSYbaVZKvA5TuDdkjmSOVgQylVH_NYxXaQhQaiTEaaW7oO9NlgTFJl9KNHJwPQeEsG4faoDfbSDOBmUgPtvWJMqrDFKF)
+
 <!--
 @startuml diagram
 
@@ -89,4 +91,3 @@ FaultDetectors .. FaultDetectors
 
 @enduml
 -->
-![](diagram.svg)
