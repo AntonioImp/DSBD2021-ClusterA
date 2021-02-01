@@ -7,7 +7,7 @@
 [submodule "ordersmanagement2B"]
 	path = ordersmanagement2B
 	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
-[submodule "PingAckFD1"]
+[submodule "Progetto5B-HeartBeat"]
 	path = PingAckFD1
 	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
 [submodule "microserviziProdotti1A"]
