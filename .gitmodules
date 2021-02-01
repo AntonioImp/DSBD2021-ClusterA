@@ -1,3 +1,6 @@
 [submodule "gestionepagamenti"]
 	path = gestionepagamenti
 	url = https://github.com/AntonioImp/gestionepagamenti.git
+[submodule "MicroserviceOrder1A"]
+	path = MicroserviceOrder1A
+	url = https://github.com/gianluca7cristaudo/MicroserviceOrder1A
