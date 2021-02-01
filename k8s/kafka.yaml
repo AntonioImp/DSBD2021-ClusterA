@@ -1,28 +1,57 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: StatefulSet
 metadata:
     name: kafka
-    labels:
-        app: kafka
 spec:
-    ports:
-        - port: 9092
-          name: kafka-port
-        - port: 9999
-          name: kafka-monitor
     selector:
-        app: kafka
+        matchlabels:
+            app: kafka
+    serviceName: "kafka"
+    replicas: 1
+    podManagementPolicy: OrderedReady
+    template:
+        metadata:
+            labels:
+                app: kafka
+        spec:
+            containers:
+                - name: kafka
+                  image: wurstmeister/kafka:2.11-2.0.0
+                  imagePullPolicy: IfNotPresent
+                  ports:
+                      - containerPort: 9092
+                        name: kafka-port
+                      - containerPort: 9999
+                        name: kafka-monitor
+                  envFrom:
+                      - configMapRef:
+                        name: kafka-config
 ---
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
     name: zookeeper
     labels:
         app: zookeeper
 spec:
-    ports:
-        - port: 2181
-          name: zookeeper-port
-          targetPort: 2181
     selector:
-        app: zookeeper
+        matchlabels:
+            app: zookeeper
+    serviceName: "zookeeper"
+    replicas: 1
+    podManagementPolicy: OrderedReady
+    template:
+        metadata:
+            labels:
+                app: zookeeper
+        spec:
+            containers:
+                - name: zookeeper
+                  image: library/zookeeper:3.4.13
+                  imagePullPolicy: IfNotPresent
+                  ports:
+                      - containerPort: 2181
+                        name: zookeeper-port
+                  envFrom:
+                      - configMapRef:
+                        name: zookeeper-config
