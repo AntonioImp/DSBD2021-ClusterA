@@ -1,15 +1,12 @@
-[submodule "gestionepagamenti"]
-	path = gestionepagamenti
+[submodule "Pagamenti2"]
+	path = Pagamenti2
 	url = https://github.com/AntonioImp/gestionepagamenti.git
-[submodule "MicroserviceOrder1A"]
-	path = MicroserviceOrder1A
+[submodule "Prodotti"]
+	path = Prodotti
 	url = https://github.com/gianluca7cristaudo/MicroserviceOrder1A
-[submodule "ordersmanagement2B"]
-	path = ordersmanagement2B
+[submodule "Ordini"]
+	path = Ordini
 	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
-[submodule "microserviziProdotti1A"]
-	path = microserviziProdotti1A
-	url = https://github.com/giuseppesanto67/microserviziProdotti1A.git
 [submodule "PingAckFD1"]
 	path = PingAckFD1
 	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
