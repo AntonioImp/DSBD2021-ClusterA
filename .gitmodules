@@ -10,6 +10,6 @@
 [submodule "ordersmanagement2B"]
 	path = ordersmanagement2B
 	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
-[submodule "Progetto5B-HeartBeat"]
-	path = Progetto5B-HeartBeat
+[submodule "PingAckFD1"]
+	path = PingAckFD1
 	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
