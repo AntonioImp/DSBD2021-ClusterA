@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+lind: Ingress
+metadata:
+    name: spring-ingress
+    annotations:
+        nginx.ingress.kubernetes.io/enable-cors: "true"
+        nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, PATCH, OPTIONS, DELETE"
+        nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+        nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+        nginx.ingress.kubernetes.io/cors-allow-header: "Content-Type"
+        nginx.ingress.kubernetes.io/rewrite-target: "/$2"
+specs:
+    rules:
+        - host: clustera.dsbd2021.it
+          http:
+            path:
+                - path: /modulo1(/|$)(.*)
+                  pathType: ImplementationSpecific
+                  backend:
+                    service:
+                        name: modulo1
+                        port:
+                            number: 8080
+                - path: /modulo2(/|$)(.*)
+                  pathType: ImplementationSpecific
+                  backend:
+                    service:
+                        name: modulo2
+                        port:
+                            number: 8080
