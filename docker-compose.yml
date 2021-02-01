@@ -20,7 +20,7 @@ services:
     <<: *common-services-config
     build:
       context: .
-      dockerfile: PingAckFaultDetector/Dockerfile
+      dockerfile: PingAckFD1/PingAckFaultDetector/Dockerfile
     ports:
       - "8080:8080"
     environment:
