@@ -13,3 +13,6 @@
 [submodule "ordersmanagement2B"]
 	path = ordersmanagement2B
 	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
+[submodule "gestionepagamenti"]
+	path = gestionepagamenti
+	url = https://github.com/AntonioImp/gestionepagamenti.git
