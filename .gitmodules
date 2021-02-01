@@ -10,6 +10,3 @@
 [submodule "microserviziProdotti1A"]
 	path = microserviziProdotti1A
 	url = https://github.com/giuseppesanto67/microserviziProdotti1A.git
-[submodule "PingAckFD1"]
-	path = PingAckFD1
-	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
