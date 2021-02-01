@@ -4,3 +4,9 @@
 [submodule "MicroserviceOrder1A"]
 	path = MicroserviceOrder1A
 	url = https://github.com/gianluca7cristaudo/MicroserviceOrder1A
+[submodule "ProgettoDSBD2020-2021"]
+	path = ProgettoDSBD2020-2021
+	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
+[submodule "ordersmanagement2B"]
+	path = ordersmanagement2B
+	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
