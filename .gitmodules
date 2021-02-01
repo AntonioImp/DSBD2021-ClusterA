@@ -1,0 +1,3 @@
+[submodule "gestionepagamenti"]
+	path = gestionepagamenti
+	url = https://github.com/AntonioImp/gestionepagamenti.git
