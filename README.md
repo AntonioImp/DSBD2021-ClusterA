@@ -13,17 +13,19 @@
     (ID 28) Andrea Valentino Papa - (6A)HeartBeatFD_None
 
 ## Minikube commands:
-'''
+```
     toDo
-'''
+```
     
 ## Hosts config:
-'''
+```
     echo "$(minikube ip) clustera.dsbd2021.it* | sudo tee /a /etc/hosts"
-'''
+```
 
 ## Scheme:
-'''plantuml
+<!--
+@startuml diagram
+
 actor endUser
 interface ApiGateway
 
@@ -49,13 +51,13 @@ storage ProdottiDBvolume
 storage Pagamenti2DBvolume
 storage OrdiniDBvolume
 
-endUser --> ApiGateway : http://clustera.dsbd.2021.it
+endUser --_> ApiGateway : http://clustera.dsbd.2021.it
 
-ApiGateway --> Pagamenti1
-ApiGateway --> ShippingSystem
-ApiGateway --> Prodotti
-ApiGateway --> Pagamenti2
-ApiGateway --> Ordini
+ApiGateway --_> Pagamenti1
+ApiGateway --_> ShippingSystem
+ApiGateway --_> Prodotti
+ApiGateway --_> Pagamenti2
+ApiGateway --_> Ordini
 
 Pagamenti1 --# Pagamenti1DB
 ShippingSystem --# ShippingSystemDB
@@ -69,7 +71,7 @@ ProdottiDB --# ProdottiDBvolume
 Pagamenti2DB --# Pagamenti2DBvolume
 OrdiniDB --# OrdiniDBvolume
 
-Kafka --> Zookeeper
+Kafka --_> Zookeeper
 
 Pagamenti1 ~~ Kafka
 ShippingSystem ~~ Kafka
@@ -84,4 +86,7 @@ Prodotti .. FaultDetectors
 Pagamenti2 .. FaultDetectors
 Ordini .. FaultDetectors
 FaultDetectors .. FaultDetectors
-'''
+
+@enduml
+-->
+![](diagram.svg)
