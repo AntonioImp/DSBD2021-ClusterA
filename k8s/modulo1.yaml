@@ -1,100 +1,100 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: order-db
+  name: order-db
 spec:
-    strategy:
-        type: Recreate
-    selector:
-        matchLabels:
-            app: order-db
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: order-db
 template:
-    metadata:
-        labels:
-            app: order-db
-    spec:
-        containers:
-            - name: order-db
-              image: mongo:latest
-              ports:
-                -containerPort: 27017
-              envFrom:
-                - configMapRef:
-                    name: order-db-env
-                - secretRef:
-                    name: order-db-secret
-                volumeMounts:
-                    - mountPath: /data/db
-                      name: order-db-volume
-                readinessProbe:
-                    exec: mongo --eval db.adminCommand('ping')
-                    initialDelaySeconds: 10
-                    timeoutSeconds: 1
-                livenessProbe:
-                    exec: mongo --eval db.adminCommand('ping')
-                    initialDelaySeconds: 20
-                    timeoutSeconds: 1
-              volumes:
-                - name: order-db-volume
-                  persistentVolumeClaim:
-                    claimName: order-db-volume
+  metadata:
+    labels:
+      app: order-db
+  spec:
+    containers:
+      - name: order-db
+        image: mongo:latest
+        ports:
+        -containerPort: 27017
+        envFrom:
+        - configMapRef:
+          name: order-db-env
+        - secretRef:
+          name: order-db-secret
+        volumeMounts:
+          - mountPath: /data/db
+            name: order-db-volume
+        readinessProbe:
+          exec: mongo --eval db.adminCommand('ping')
+          initialDelaySeconds: 10
+          timeoutSeconds: 1
+        livenessProbe:
+          exec: mongo --eval db.adminCommand('ping')
+          initialDelaySeconds: 20
+          timeoutSeconds: 1
+        volumes:
+        - name: order-db-volume
+          persistentVolumeClaim:
+          claimName: order-db-volume
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: order
+  name: order
 spec:
-    strategy:
-        type: Recreate
-    selector:
-        matchLabels:
-            app: order
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: order
 template:
-    metadata:
-        labels:
-            app: order-pod
-    spec:
-        initContainers:
-            - name waitdb
-              image: mongo
-              command:
-                - sh
-                - -command
-                - |
-                  env | grep MONGO
-                  while ! mongo --host $MONGO_HOSTNAME --port $MONGODB_PORT -u $MONGO_INITDB_ROOT_USERNAME \
-                  -p $MONGO_INITDB_ROOT_PASSWORD --eval 'db.adminCommand("ping")' > /dev/null 2>&1; do
-                    echo waiting for db
-                    sleep 2
-                  done
-              envFrom:
-                - configMapRef:
-                    name: user-env
-                - configMapRef:
-                    name: user-db-env
-                - configMapRef:
-                    name: user-db-secret
-        containers:
-            - name: order
-              image: order:v1
-              ports:
-                -containerPort: 8080
-              envFrom:
-                - configMapRef:
-                    name: order-db-env
-                - secretRef:
-                    name: order-env
-                - secretRef:
-                    name: order-db-secret
-                readinessProbe:
-                    httpGet:
-                        path: /ping
-                        port: 8080
-                    initialDelaySeconds: 15
-                    timeoutSeconds: 3
-                livenessProbe:
-                    httpGet:
-                        path: /ping
-                        port: 8080
-                    initialDelaySeconds: 40
-                    timeoutSeconds: 3
+  metadata:
+    labels:
+      app: order-pod
+  spec:
+    initContainers:
+      - name waitdb
+        image: mongo
+        command:
+        - sh
+        - -command
+        - |
+          env | grep MONGO
+          while ! mongo --host $MONGO_HOSTNAME --port $MONGODB_PORT -u $MONGO_INITDB_ROOT_USERNAME \
+          -p $MONGO_INITDB_ROOT_PASSWORD --eval 'db.adminCommand("ping")' > /dev/null 2>&1; do
+          echo waiting for db
+          sleep 2
+          done
+        envFrom:
+        - configMapRef:
+          name: user-env
+        - configMapRef:
+          name: user-db-env
+        - configMapRef:
+          name: user-db-secret
+    containers:
+      - name: order
+        image: order:v1
+        ports:
+        -containerPort: 8080
+        envFrom:
+        - configMapRef:
+          name: order-db-env
+        - secretRef:
+          name: order-env
+        - secretRef:
+          name: order-db-secret
+        readinessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 15
+          timeoutSeconds: 3
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 40
+          timeoutSeconds: 3

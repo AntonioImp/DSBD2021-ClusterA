@@ -1,57 +1,57 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-    name: kafka
+  name: kafka
 spec:
-    selector:
-        matchlabels:
-            app: kafka
-    serviceName: "kafka"
-    replicas: 1
-    podManagementPolicy: OrderedReady
-    template:
-        metadata:
-            labels:
-                app: kafka
-        spec:
-            containers:
-                - name: kafka
-                  image: wurstmeister/kafka:2.11-2.0.0
-                  imagePullPolicy: IfNotPresent
-                  ports:
-                      - containerPort: 9092
-                        name: kafka-port
-                      - containerPort: 9999
-                        name: kafka-monitor
-                  envFrom:
-                      - configMapRef:
-                        name: kafka-config
+  selector:
+    matchlabels:
+      app: kafka
+  serviceName: "kafka"
+  replicas: 1
+  podManagementPolicy: OrderedReady
+  template:
+    metadata:
+      labels:
+        app: kafka
+    spec:
+      containers:
+        - name: kafka
+          image: wurstmeister/kafka:2.11-2.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9092
+            name: kafka-port
+            - containerPort: 9999
+            name: kafka-monitor
+          envFrom:
+            - configMapRef:
+            name: kafka-config
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: zookeeper
-    labels:
-        app: zookeeper
+  name: zookeeper
+  labels:
+    app: zookeeper
 spec:
-    selector:
-        matchlabels:
-            app: zookeeper
-    serviceName: "zookeeper"
-    replicas: 1
-    podManagementPolicy: OrderedReady
-    template:
-        metadata:
-            labels:
-                app: zookeeper
-        spec:
-            containers:
-                - name: zookeeper
-                  image: library/zookeeper:3.4.13
-                  imagePullPolicy: IfNotPresent
-                  ports:
-                      - containerPort: 2181
-                        name: zookeeper-port
-                  envFrom:
-                      - configMapRef:
-                        name: zookeeper-config
+  selector:
+    matchlabels:
+      app: zookeeper
+  serviceName: "zookeeper"
+  replicas: 1
+  podManagementPolicy: OrderedReady
+  template:
+    metadata:
+      labels:
+        app: zookeeper
+    spec:
+      containers:
+        - name: zookeeper
+          image: library/zookeeper:3.4.13
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 2181
+            name: zookeeper-port
+          envFrom:
+            - configMapRef:
+            name: zookeeper-config

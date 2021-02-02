@@ -1,21 +1,21 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-    name: modulo1-db-volume
+  name: modulo1-db-volume
 spec:
-    accessModes:
-        - ReadWriteOnce
-    resources:
-        requests:
-            storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-    name: modulo2-db-volume
+  name: modulo2-db-volume
 spec:
-    accessModes:
-        - ReadWriteOnce
-    resources:
-        requests:
-            storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

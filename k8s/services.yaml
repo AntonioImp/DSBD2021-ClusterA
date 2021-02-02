@@ -1,54 +1,54 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: kafka
-    labels:
-        app: kafka
+  name: kafka
+  labels:
+    app: kafka
 spec:
-    ports:
-        - port: 9092
-          name: kafka-port
-        - port: 9999
-          name: kafka-monitor
-    selector:
-        app: kafka
+  ports:
+    - port: 9092
+      name: kafka-port
+    - port: 9999
+      name: kafka-monitor
+  selector:
+    app: kafka
 ---
 apiVersion: v1
 kind: Service
 metadata:
-    name: zookeeper
-    labels:
-        app: zookeeper
+  name: zookeeper
+  labels:
+    app: zookeeper
 spec:
-    ports:
-        - port: 2181
-          name: zookeeper-port
-          targetPort: 2181
-    selector:
-        app: zookeeper
+  ports:
+    - port: 2181
+      name: zookeeper-port
+      targetPort: 2181
+  selector:
+    app: zookeeper
 ---
 apiVersion: v1
 kind: Service
 metadata:
-    name: modulo1-db
-    labels:
-        app: modulo1-db
+  name: modulo1-db
+  labels:
+    app: modulo1-db
 spec:
-    ports:
-        - port: 27017
-          name: modulo1-db-port
-    selector:
-        app: modulo1-db
+  ports:
+    - port: 27017
+      name: modulo1-db-port
+  selector:
+    app: modulo1-db
 ---
 apiVersion: v1
 kind: Service
 metadata:
-    name: modulo1
-    labels:
-        app: modulo1
+  name: modulo1
+  labels:
+    app: modulo1
 spec:
-    ports:
-        - port: 8080
-          name: modulo1-port
-    selector:
-        app: modulo1
+  ports:
+    - port: 8080
+      name: modulo1-port
+  selector:
+    app: modulo1
