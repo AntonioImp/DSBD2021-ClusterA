@@ -16,3 +16,6 @@
 [submodule "gestionepagamenti"]
 	path = gestionepagamenti
 	url = https://github.com/AntonioImp/gestionepagamenti.git
+[submodule "PingAck"]
+	path = PingAck
+	url = git://github.com/ameliasorrenti/dsbd-project.git
