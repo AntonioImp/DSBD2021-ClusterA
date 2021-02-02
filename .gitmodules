@@ -19,3 +19,6 @@
 [submodule "PingAck"]
 	path = PingAck
 	url = git://github.com/ameliasorrenti/dsbd-project.git
+[submodule "shippingmanagerkubernetes"]
+	path = shippingmanagerkubernetes
+	url = https://github.com/AndreaArciprete/shippingmanagerkubernetes.git
