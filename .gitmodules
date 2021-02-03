@@ -25,3 +25,6 @@
 [submodule "ProgDSDB_HBFaultDKU"]
 	path = ProgDSDB_HBFaultDKU
 	url = https://github.com/2875apapa/ProgDSDB_HBFaultDKU.git
+[submodule "Payment_Microservice_Santonocito_Palumbo"]
+	path = Payment_Microservice_Santonocito_Palumbo
+	url = https://gitlab.com/orazio1997/dsbd2020_santonocito_palumbo.git
