@@ -7,6 +7,5 @@
     <mapping directory="$PROJECT_DIR$/gestionepagamenti" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/microserviziProdotti1A" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ordersmanagement2B" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/shippingmanagerkubernetes" vcs="Git" />
   </component>
 </project>
