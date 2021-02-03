@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shipping-service-env-file
+data:
+  KAFKA_ADDRESS: kafkabroker:9092
+  KAFKA_GROUP_ID: shipping-consumer-group
+  KAFKA_TOPIC_LOGGING: logging
+  KAFKA_TOPIC_ORDER: orders
+  KAFKA_TOPIC_INVOICING: invoicing
+  MONGODB_HOSTNAME: shipping-service-db
+  MONGODB_PORT: "27017"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shipping-service-db-env-file
+  namespace: default
+data:
+  MONGO_INITDB_DATABASE: admin

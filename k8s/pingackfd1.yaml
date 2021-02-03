@@ -8,19 +8,19 @@ spec:
   selector:
     matchLabels:
       app: pingackfd1
-template:
-  metadata:
+  template:
+   metadata:
     labels:
-      app: pingackfd1-pod
-  spec:
+      app: pingackfd1
+   spec:
     containers:
       - name: pingackfd1
         image: pingackfd1:v1
         ports:
-        -containerPort: 8080
+         - containerPort: 8080
         envFrom:
-        - configMapRef:
-          name: pingackfd1-env
+         - configMapRef:
+            name: pingackfd1-env
         readinessProbe:
           httpGet:
             path: /ping

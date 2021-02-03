@@ -19,7 +19,7 @@
     
 ## Hosts config:
 ```
-    echo "$(minikube ip) clustera.dsbd2021.it* | sudo tee /a /etc/hosts"
+    echo "$(minikube ip) clustera.dsbd2021.it" | sudo tee -a /etc/hosts
 ```
 
 ## Scheme:

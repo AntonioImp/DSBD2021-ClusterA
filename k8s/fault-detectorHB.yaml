@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fault-detectorHB
+  name: fault-detector-hb
 spec:
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: fault-detectorHB
+      app: fault-detector-hb
   template:
     metadata:
       labels:
-        app: fault-detectorHB
+        app: fault-detector-hb
     spec:
       containers:
-      - name: fault-detectorHB
+      - name: fault-detector-hb
         image: 2875apapa/fault-detectorhb:v1
         ports:
         - containerPort: 1234
