@@ -4,12 +4,6 @@
 [submodule "PingAckFD1"]
 	path = PingAckFD1
 	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
-[submodule "MicroserviceOrder1A"]
-	path = MicroserviceOrder1A
-	url = https://github.com/gianluca7cristaudo/MicroserviceOrder1A
-[submodule "ProgettoDSBD2020-2021"]
-	path = ProgettoDSBD2020-2021
-	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
 [submodule "ordersmanagement2B"]
 	path = ordersmanagement2B
 	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
@@ -19,12 +13,6 @@
 [submodule "PingAck"]
 	path = PingAck
 	url = git://github.com/ameliasorrenti/dsbd-project.git
-[submodule "shippingmanagerkubernetes"]
-	path = shippingmanagerkubernetes
-	url = https://github.com/AndreaArciprete/shippingmanagerkubernetes.git
 [submodule "ProgDSDB_HBFaultDKU"]
 	path = ProgDSDB_HBFaultDKU
 	url = https://github.com/2875apapa/ProgDSDB_HBFaultDKU.git
-[submodule "Payment_Microservice_Santonocito_Palumbo"]
-	path = Payment_Microservice_Santonocito_Palumbo
-	url = https://gitlab.com/orazio1997/dsbd2020_santonocito_palumbo.git
