@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6b4e7e4-f7dd-451b-af31-37a03e1531c6" name="Default Changelist" comment="Add yaml file for microservice fault-detectorHB (Deployment e ConfigMap).&#10;Add module fault-detectorHB in services.yaml e ingress.yaml" />
+    <list default="true" id="c6b4e7e4-f7dd-451b-af31-37a03e1531c6" name="Default Changelist" comment="Add yaml file for microservice fault-detectorHB (Deployment e ConfigMap).&#10;Add module fault-detectorHB in services.yaml e ingress.yaml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/fault-detectorHB-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/fault-detectorHB-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/ingress.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,19 +32,6 @@
       <recent name="$PROJECT_DIR$/k8s" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -50,6 +41,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612343065520</updated>
       <workItem from="1612343070239" duration="1275000" />
+      <workItem from="1612363131783" duration="381000" />
     </task>
     <task id="LOCAL-00001" summary="Add yaml file for microservice fault-detectorHB (Deployment e ConfigMap).&#10;Add module fault-detectorHB in services.yaml e ingress.yaml">
       <created>1612343886943</created>
@@ -74,6 +66,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add yaml file for microservice fault-detectorHB (Deployment e ConfigMap).&#10;Add module fault-detectorHB in services.yaml e ingress.yaml" />
