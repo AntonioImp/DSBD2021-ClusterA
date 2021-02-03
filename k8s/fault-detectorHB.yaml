@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: fault-detectorHB
-        image: fault-detectorHB:v1
+        image: 2875apapa/fault-detectorhb:v1
         ports:
         - containerPort: 1234
         envFrom:

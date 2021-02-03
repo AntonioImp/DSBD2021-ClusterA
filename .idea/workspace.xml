@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6b4e7e4-f7dd-451b-af31-37a03e1531c6" name="Default Changelist" comment="Add yaml file for microservice fault-detectorHB (Deployment e ConfigMap).&#10;Add module fault-detectorHB in services.yaml e ingress.yaml">
+    <list default="true" id="c6b4e7e4-f7dd-451b-af31-37a03e1531c6" name="Default Changelist" comment="Edit yaml file for Fault-DetectorHB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/fault-detectorHB-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/fault-detectorHB-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/ingress.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +23,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/k8s" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProgDSDB_HBFaultDKU" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -41,7 +39,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612343065520</updated>
       <workItem from="1612343070239" duration="1275000" />
-      <workItem from="1612363131783" duration="381000" />
+      <workItem from="1612363131783" duration="1695000" />
     </task>
     <task id="LOCAL-00001" summary="Add yaml file for microservice fault-detectorHB (Deployment e ConfigMap).&#10;Add module fault-detectorHB in services.yaml e ingress.yaml">
       <created>1612343886943</created>
@@ -50,7 +48,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612343886944</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Edit yaml file for Fault-DetectorHB">
+      <created>1612363552493</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612363552493</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -70,6 +75,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add yaml file for microservice fault-detectorHB (Deployment e ConfigMap).&#10;Add module fault-detectorHB in services.yaml e ingress.yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add yaml file for microservice fault-detectorHB (Deployment e ConfigMap).&#10;Add module fault-detectorHB in services.yaml e ingress.yaml" />
+    <MESSAGE value="Edit yaml file for Fault-DetectorHB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit yaml file for Fault-DetectorHB" />
   </component>
 </project>
