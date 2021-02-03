@@ -22,3 +22,6 @@
 [submodule "shippingmanagerkubernetes"]
 	path = shippingmanagerkubernetes
 	url = https://github.com/AndreaArciprete/shippingmanagerkubernetes.git
+[submodule "ProgDSDB_HBFaultDKU"]
+	path = ProgDSDB_HBFaultDKU
+	url = https://github.com/2875apapa/ProgDSDB_HBFaultDKU.git
