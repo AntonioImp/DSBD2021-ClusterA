@@ -8,7 +8,7 @@
     (ID 9) Giuseppe Germano, Gianluca Cristaudo - (1A)Prodotti_PingAck
     (ID 10) Antonio Impalà, Kristian Di Blasi - (3A)Pagamenti_PingAck
     (ID 14) Irene Baldacchino, Salvatore Gambadoro - (2B)Ordini_PingAck
-    (ID 25) Raffaele Mineo [SUPERVISOR] - (5A)PingAckFD_HeartBeat, API gateway Nginx
+    (ID 25) Raffaele Mineo [SUPERVISOR] - (5A)PingAckFD_HeartBeat, Ingress Nginx
     (ID 27) Amelia Sorrenti - (5A)PingAckFD_PingAck
     (ID 28) Andrea Valentino Papa - (6A)HeartBeatFD_None
 
