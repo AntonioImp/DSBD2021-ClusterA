@@ -28,3 +28,10 @@ specs:
             name: modulo2
             port:
               number: 8080
+        - path: /fdhb(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+            service:
+              name: fault-detectorHB
+              port:
+                number: 8080
