@@ -19,6 +19,3 @@
 [submodule "shippingmanagerkubernetes"]
 	path = shippingmanagerkubernetes
 	url = https://github.com/AndreaArciprete/shippingmanagerkubernetes.git
-[submodule "paymentmicroservice"]
-	path = paymentmicroservice
-	url = https://gitlab.com/orazio1997/dsbd2020_santonocito_palumbo
