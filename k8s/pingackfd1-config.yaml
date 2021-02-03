@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pingackfd1-env
+data:
+  KAFKA_ADDRESS: kafka:9092
+  KAFKA_MAIN_TOPIC: logging
+  HBFDHOSTPORT=testheartbeat:8080
+  HEARTBEAT_RESEND_TIME=30000
+  PING_POOLING_TIME=30000
+  HOST_LIST=testclient:8080
