@@ -27,11 +27,19 @@ template:
           - mountPath: /data/db
             name: order-db-volume
         readinessProbe:
-          exec: mongo --eval db.adminCommand('ping')
+          exec:
+            command:
+              - mongo
+              - --eval
+              - "db.adminCommand('ping')"
           initialDelaySeconds: 10
           timeoutSeconds: 1
         livenessProbe:
-          exec: mongo --eval db.adminCommand('ping')
+          exec:
+            command:
+              - mongo
+              - --eval
+              - "db.adminCommand('ping')"
           initialDelaySeconds: 20
           timeoutSeconds: 1
         volumes:
