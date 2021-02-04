@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: shipping-service-env-file
 data:
-  KAFKA_ADDRESS: kafkabroker:9092
+  KAFKA_ADDRESS: kafkabroker.default.svc.cluster.local:9092
   KAFKA_GROUP_ID: shipping-consumer-group
   KAFKA_TOPIC_LOGGING: logging
   KAFKA_TOPIC_ORDER: orders
