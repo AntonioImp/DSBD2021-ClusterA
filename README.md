@@ -14,6 +14,10 @@
 
 ## Minikube commands:
 ```
+    kubectl apply -f k8s/services
+    kubectl apply -f k8s/ingress
+    kubectl apply -f k8s/kafka
+    kubectl apply -f k8s/pingackfd1
     toDo
 ```
     
