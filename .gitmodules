@@ -19,6 +19,3 @@
 [submodule "shippingmanagerkubernetes"]
 	path = shippingmanagerkubernetes
 	url = https://github.com/AndreaArciprete/shippingmanagerkubernetes.git
-[submodule "paymentmicroservice"]
-	path = paymentmicroservice
-	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
