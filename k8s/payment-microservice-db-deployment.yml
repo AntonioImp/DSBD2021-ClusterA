@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-microservice-db
+spec:
+  selector:
+    matchLabels:
+      app: payment-microservice-db
+  template:
+    metadata:
+      labels:
+        app: payment-microservice-db
+    spec:
+      containers:
+        - name: payment-microservice-db
+          image: oraziosantonocito/dsbd.2020-santonocito_palumbo:payment-microservice-db
+          ports:
+            - containerPort: 27017
+          envFrom:
+            - configMapRef:
+                name: payment-microservice-db-configmap
+            - secretRef:
+                name: payment-microservice-db-secret
+          volumeMounts:
+            - mountPath: /data/db
+              name: payment-microservice-db-volume
+          readinessProbe:
+            exec:
+              command:
+                - mongo
+                - --eval
+                - "db.adminCommand('ping')"
+            initialDelaySeconds: 10
+            timeoutSeconds: 1
+          livenessProbe:
+            exec:
+              command:
+                - mongo
+                - --eval
+                - "db.adminCommand('ping')"
+            initialDelaySeconds: 20
+            timeoutSeconds: 1
+
+      volumes:
+        - name: payment-microservice-db-volume
+          persistentVolumeClaim:
+            claimName: payment-microservice-db-volume

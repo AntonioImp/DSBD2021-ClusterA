@@ -21,3 +21,11 @@ spec:
                 name: shipping-service
                 port:
                   number: 8080
+          - path: /payment(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: payment-microservice
+                port:
+                  number: 8080
+
