@@ -16,3 +16,6 @@
 [submodule "shippingmanagerkubernetes"]
 	path = shippingmanagerkubernetes
 	url = https://github.com/AndreaArciprete/shippingmanagerkubernetes.git
+[submodule "PingAckFD1"]
+	path = PingAckFD1
+	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
