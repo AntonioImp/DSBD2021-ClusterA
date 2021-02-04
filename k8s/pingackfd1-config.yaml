@@ -5,7 +5,7 @@ metadata:
 data:
   KAFKA_ADDRESS: kafkabroker:9092
   KAFKA_MAIN_TOPIC: logging
-  HBFDHOSTPORT: testheartbeat:8080
+  HBFDHOSTPORT: testheartbeat.default.svc.cluster.local:8080
   HEARTBEAT_RESEND_TIME: "30000"
   PING_POOLING_TIME: "30000"
-  HOST_LIST: testclient:8080
+  HOST_LIST: testclient.default.svc.cluster.local:8080
