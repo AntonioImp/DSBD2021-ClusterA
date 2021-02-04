@@ -76,6 +76,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  name: pingack
+spec:
+  ports:
+    - port: 8080
+  selector:
+    app: pingack
+---
+apiVersion: v1
+kind: Service
+metadata:
   name: payment-microservice
 spec:
   type: NodePort # Solo per il testing.
