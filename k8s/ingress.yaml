@@ -29,10 +29,10 @@ spec:
                 port:
                   number: 8080
           - path: /order(/|$)(.*)
-              pathType: ImplementationSpecific
-              backend:
-                service:
-                  name: orders-service
-                  port:
-                    number: 8080
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: orders-service
+                port:
+                  number: 8080
 
