@@ -16,9 +16,6 @@
 [submodule "shippingmanagerkubernetes"]
 	path = shippingmanagerkubernetes
 	url = https://github.com/AndreaArciprete/shippingmanagerkubernetes.git
-[submodule "DSBD2020Santonocito_Palumbo"]
-	path = DSBD2020Santonocito_Palumbo
-	url = https://github.com/O46001391/DSBD2020Santonocito_Palumbo.git
 [submodule "PingAckFD1"]
 	path = PingAckFD1
 	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
