@@ -15,7 +15,7 @@ spec:
    spec:
     containers:
       - name: pingackfd1
-        image: ingraffaelemineo/pingackfd1:v1
+        image: ingraffaelemineo/pingackfd:v1
         ports:
          - containerPort: 8080
         envFrom:
