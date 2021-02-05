@@ -1,6 +1,3 @@
-[submodule "microserviziProdotti1A"]
-	path = microserviziProdotti1A
-	url = https://github.com/giuseppesanto67/microserviziProdotti1A.git
 [submodule "gestionepagamenti"]
 	path = gestionepagamenti
 	url = https://github.com/AntonioImp/gestionepagamenti.git
@@ -13,9 +10,6 @@
 [submodule "shippingmanagerkubernetes"]
 	path = shippingmanagerkubernetes
 	url = https://github.com/AndreaArciprete/shippingmanagerkubernetes.git
-[submodule "ordersmanagement2B"]
-	path = ordersmanagement2B
-	url = https://github.com/Ire97/ProgettoDSBD2020-2021.git
 [submodule "DSBD2020Santonocito_Palumbo"]
 	path = DSBD2020Santonocito_Palumbo
 	url = https://github.com/O46001391/DSBD2020Santonocito_Palumbo.git
