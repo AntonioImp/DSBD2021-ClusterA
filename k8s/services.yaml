@@ -122,3 +122,30 @@ spec:
     - port: 27017
   selector:
     app: orders-service-db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gestionepagamenti-db
+  labels:
+    app: gestionepagamenti
+spec:
+  ports:
+    - port: 3306
+      name: gp-db-port
+  selector:
+    app: gestionepagamenti
+    tier: pay-mysql
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gestionepagamenti
+  labels:
+    app: gestionepagamenti
+spec:
+  ports:
+    - port: 2222
+      name: gp-port
+  selector:
+    app: gestionepagamenti

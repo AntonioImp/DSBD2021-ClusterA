@@ -35,4 +35,10 @@ spec:
                 name: orders-service
                 port:
                   number: 8080
-
+          - path: /payment1(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: gestionepagamenti
+                port:
+                  number: 2222
