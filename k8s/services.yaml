@@ -88,7 +88,6 @@ kind: Service
 metadata:
   name: payment-microservice
 spec:
-  type: NodePort # Solo per il testing.
   ports:
     - port: 8080
   selector:
@@ -99,7 +98,6 @@ kind: Service
 metadata:
   name: payment-microservice-db
 spec:
-  type: NodePort # Solo per il testing.
   ports:
     - port: 27017
   selector:
