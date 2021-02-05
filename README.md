@@ -5,7 +5,7 @@
 ## Authors:
     (ID 6) Marco Palumbo, Orazio Santonocito - (3C)Pagamenti_HeartBeat
     (ID 8) Andrea Arciprete, Daniela Chiavetta - (9B)ShippingSystem_PingAck
-    (ID 9) Giuseppe Germano, Gianluca Cristaudo - (1A)Prodotti_PingAck
+    (ID 9) Giuseppe Germano, Gianluca Cristaudo - (1A)Prodotti_PingAck ***RITIRATI SENZA PREAVVISO il 05/02/2021***
     (ID 10) Antonio Impalà, Kristian Di Blasi - (3A)Pagamenti_PingAck
     (ID 14) Irene Baldacchino, Salvatore Gambadoro - (2B)Ordini_PingAck
     (ID 25) Raffaele Mineo [SUPERVISOR] - (5A)PingAckFD_HeartBeat, Ingress Nginx
