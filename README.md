@@ -14,11 +14,16 @@
 
 ## Minikube commands:
 ```
-    kubectl apply -f k8s/services
-    kubectl apply -f k8s/ingress
-    kubectl apply -f k8s/kafka
-    kubectl apply -f k8s/pingackfd1
-    toDo
+    ### GENERAL ###
+    kubectl apply -f k8s
+    
+    ### PAYMENT-MICROSERVICE ###
+    Accertarsi che il POD contenente il database "payment-microservice-db..." sia la REPLICA PRIMARY:
+    1) Accedere al POD con il comando: -> kubectl exec --stdin --tty <NOME_DEL_POD> -- /bin/sh
+    2) Eseguire il comando con le seguenti credenziali di test (di base un replica set di una sola replica che è quella che è contenuta nel POD): -> mongo -u root -p 1208 --eval 'rs.initiate()'
+    3) Uscire dal container: -> exit
+
+    ### toDo ###
 ```
     
 ## Hosts config:
