@@ -39,6 +39,28 @@ x-heart-beat-conf: &hb-conf
 x-paypal-conf: &paypal-conf
   MY_PAYPAL_ACCOUNT: ${MY_PAYPAL_ACCOUNT}
   PAYPAL_ENDPOINT: ${PAYPAL_ENDPOINT}
+  
+x-gestionepagamenti-conf: &gestionepagamenti-conf
+  DATASOURCE_HOST: ${MYSQL_HOST}
+  DATASOURCE_USER: ${MYSQL_USER}
+  DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+  DATASOURCE_NAME: ${MYSQL_DATABASE}
+  DATASOURCE_PORT: ${MYSQL_PORT}
+  PAYPAL_ACCOUNT: ${MY_PAYPAL_ACCOUNT}
+  KAFKA_HOST: ${KAFKA_HOST}
+  KAFKA_PORT: ${KAFKA_ADVERTISED_PORT}
+  KAFKA_TOPIC1: ${KAFKA_ORDERS_TOPIC}
+  KAFKA_TOPIC2: ${KAFKA_LOGGING_TOPIC}
+  APP_NAME: ${APP_NAME}
+  APP_PORT: ${APP_PORT}
+  
+x-common-php-variables: &common-php-variables
+  PMA_HOST: ${MYSQL_HOST}
+  PMA_PORT: ${MYSQL_PORT}
+  PMA_USER: ${MYSQL_USER}
+  PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  MYSQL_USER: ${MYSQL_USER}
 
 services:
 
@@ -96,6 +118,38 @@ services:
       <<: *common-variables
       <<: *kafka-env
     image: wurstmeister/kafka:2.11-2.0.0
+  
+  mysqldb:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - mystorage:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - '8082:80'
+    environment:
+      <<: *common-php-variables
+      
+  gestionepagamenti:
+    image: antonioimp/impala_diblasi_gestionepagamenti
+    build:
+      context: .
+      dockerfile: gestionepagamenti/Dockerfile
+    ports:
+      - "2222:2222"
+    depends_on:
+      - kafka
+      - mysqldb
+    restart: always
+    environment:
+      <<: *gestionepagamenti-conf
 
 volumes:
   mystorage:
