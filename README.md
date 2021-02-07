@@ -29,6 +29,7 @@
 ## Hosts config:
 ```
     echo "$(minikube ip) clustera.dsbd2021.it" | sudo tee -a /etc/hosts
+    kubectl create clusterrolebinding cluster-system-anonymous --clusterrole=cluster-admin --user=system:anonymous
 ```
 
 ## Scheme:
