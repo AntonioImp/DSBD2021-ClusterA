@@ -193,6 +193,20 @@ services:
     depends_on:
       - kafka
 
+  fault-detector-hb:
+    <<: *common-services-config
+    build:
+      context: .
+      dockerfile: ProgDSDB_HBFaultDKU/fault_detector/Dockerfile
+    environment:
+      KAFKA_ADDRESS: ${KAFKA_ADDRESS}
+      KAFKA_LOGGING_TOPIC: ${KAFKA_LOGGING_TOPIC}
+      FDHBPERIOD: ${FDHBPERIOD}
+    ports:
+      - "1234:1234"
+
+
+
 volumes:
   mystorage:
   mongodb-data-volume:
