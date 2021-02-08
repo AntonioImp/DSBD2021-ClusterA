@@ -8,8 +8,8 @@ x-xxx-common-services-config: &common-services-config
   restart: always
 
 x-mongo-secrets-shipping: &mongo-credentials-shipping
-  MONGO_USER: &mongo-user ${MONGO_USER_SHIPPING}
-  MONGO_PASS: &mongo-pass ${MONGO_PASS_SHIPPING}
+  MONGO_USER: &mongo-user-shipping ${MONGO_USER_SHIPPING}
+  MONGO_PASS: &mongo-pass-shipping ${MONGO_PASS_SHIPPING}
   MONGO_AUTH_DB: ${MONGO_AUTH_DB_SHIPPING}
   MONGO_HOST: ${MONGO_HOST_SHIPPING}
   MONGO_PORT: ${MONGO_PORT_SHIPPING}
@@ -159,17 +159,16 @@ services:
     environment:
       <<: *gestionepagamenti-conf
       
-      
-   mongodb-shipping:
+  mongodb-shipping:
     <<: *common-services-config
     image: mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: *mongo-user
-      MONGO_INITDB_ROOT_PASSWORD: *mongo-pass
+      MONGO_INITDB_ROOT_USERNAME: *mongo-user-shipping
+      MONGO_INITDB_ROOT_PASSWORD: *mongo-pass-shipping
     volumes:
       - mongo-db-data-shipping:/data/db
       
-   shipping-manager:
+  shipping-manager:
     <<: *common-services-config
     build:
       image: andreaarciprete/arciprete-chiavetta-progetto-9b:shipping-manager123456
