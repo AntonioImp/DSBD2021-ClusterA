@@ -16,3 +16,9 @@
 [submodule "Progetto2BKubernetes"]
 	path = Progetto2BKubernetes
 	url = https://github.com/Ire97/Progetto2BKubernetes.git
+[submodule "FakeProductsKubernetes"]
+	path = FakeProductsKubernetes
+	url = https://github.com/Ire97/FakeProductsKubernetes.git
+[submodule "PingAckFD1"]
+	path = PingAckFD1
+	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
