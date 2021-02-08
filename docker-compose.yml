@@ -178,6 +178,21 @@ services:
     ports:
      - "8080:8080"
 
+  pingack:
+    image: ameliasorrenti/pingack:v1
+    <<: *common-services-config
+    build:
+      context: .
+      dockerfile: pingack/Dockerfile
+    ports:
+      - "8080"
+    environment:
+      PING_TIME: ${PING_TIME}
+      HOSTS_LIST: ${HOSTS_LIST}
+      BOOTSTRAP_ADDRESS: ${BOOTSTRAP_ADDRESS}
+    depends_on:
+      - kafka
+
 volumes:
   mystorage:
   mongodb-data-volume:

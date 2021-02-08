@@ -4,5 +4,5 @@ metadata:
   name: pingack-env
 data:
   PING_TIME: "30" # in seconds
-  HOSTS_LIST: orders-service,shipping-service,products-service,payments-service
+  HOSTS_LIST: orders-service,shipping-service,gestionepagamenti,fault-detector-hb
   BOOTSTRAP_ADDRESS: kafkabroker.default.svc.cluster.local:9092
