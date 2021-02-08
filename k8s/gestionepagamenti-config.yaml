@@ -12,7 +12,7 @@ data:
   KAFKA_TOPIC1: orders
   KAFKA_TOPIC2: logging
   APP_NAME: gestionepagamenti
-  APP_PORT: "2222"
+  APP_PORT: "8080"
 ---
 apiVersion: v1
 kind: ConfigMap

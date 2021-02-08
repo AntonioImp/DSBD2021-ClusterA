@@ -94,7 +94,7 @@ spec:
         - image: antonioimp/impala_diblasi_gestionepagamenti
           name: gestionepagamenti
           ports:
-            - containerPort: 2222
+            - containerPort: 8080
               name: gp-port
           envFrom:
             - configMapRef:
@@ -106,12 +106,12 @@ spec:
           readinessProbe:
             httpGet:
               path: /health/ping
-              port: 2222
+              port: 8080
             initialDelaySeconds: 15
             periodSeconds: 3
           livenessProbe:
             httpGet:
               path: /health/ping
-              port: 2222
+              port: 8080
             initialDelaySeconds: 40
             periodSeconds: 3

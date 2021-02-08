@@ -145,7 +145,7 @@ metadata:
     app: gestionepagamenti
 spec:
   ports:
-    - port: 2222
+    - port: 8080
       name: gp-port
   selector:
     app: gestionepagamenti

@@ -41,4 +41,4 @@ spec:
               service:
                 name: gestionepagamenti
                 port:
-                  number: 2222
+                  number: 8080
