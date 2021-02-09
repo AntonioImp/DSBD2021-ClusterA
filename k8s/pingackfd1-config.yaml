@@ -8,5 +8,5 @@ data:
   HBFDHOSTPORT: fault-detector-hb.default.svc.cluster.local:1234
   HEARTBEAT_RESEND_TIME: "30000"
   PING_POOLING_TIME: "30000"
-  HOST_LIST: orders-service.default.svc.cluster.local:8080,shipping-service.default.svc.cluster.local:8080,gestionepagamenti.default.svc.cluster.local:8080,fault-detector-hb.default.svc.cluster.local:1234
+  HOST_LIST: orders-service.default.svc.cluster.local:8080,shipping-service.default.svc.cluster.local:8080,gestionepagamenti.default.svc.cluster.local:8080,fault-detector-hb.default.svc.cluster.local:8080
 
