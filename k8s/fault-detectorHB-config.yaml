@@ -7,3 +7,4 @@ data:
   KAFKA_GROUP_ID: logging-group
   KAFKA_MAIN_TOPIC: logging
   FDHBPERIOD: "30000" #variabile globale periodo iterazione mappa
+  HBPORT: "8080"
