@@ -147,9 +147,6 @@ services:
       
   gestionepagamenti:
     image: antonioimp/impala_diblasi_gestionepagamenti
-    build:
-      context: .
-      dockerfile: gestionepagamenti/Dockerfile
     ports:
       - "2222:2222"
     depends_on:
