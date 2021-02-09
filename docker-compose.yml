@@ -191,6 +191,7 @@ services:
       - kafka
 
   fault-detector-hb:
+    image: 2875apapa/fault-detectorhb2:v1
     <<: *common-services-config
     build:
       context: .
@@ -200,7 +201,7 @@ services:
       KAFKA_LOGGING_TOPIC: ${KAFKA_LOGGING_TOPIC}
       FDHBPERIOD: ${FDHBPERIOD}
     ports:
-      - "1234:1234"
+      - "8080:8080"
 
 
 
