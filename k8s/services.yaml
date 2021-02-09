@@ -55,7 +55,7 @@ metadata:
     app: fault-detector-hb
 spec:
   ports:
-    - port: 8080
+    - port: 808
       name: fd-port
   selector:
     app: fault-detector-hb
