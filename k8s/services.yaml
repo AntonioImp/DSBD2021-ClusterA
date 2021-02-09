@@ -7,9 +7,9 @@ metadata:
 spec:
   ports:
     - port: 9092
-      name: plaintext
+      name: kafkabroker-port
     - port: 9999
-      name: jmx
+      name: kafkabroker-monitor
   selector:
     app: kafkabroker
 ---
