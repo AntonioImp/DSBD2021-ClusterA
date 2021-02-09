@@ -5,8 +5,8 @@ metadata:
 data:
   KAFKA_ADDRESS: kafkabroker.default.svc.cluster.local:9092
   KAFKA_MAIN_TOPIC: logging
-  HBFDHOSTPORT: fault-detector-hb.default.svc.cluster.local:1234
+  HBFDHOSTPORT: fault-detector-hb.default.svc.cluster.local:8080
   HEARTBEAT_RESEND_TIME: "30000"
   PING_POOLING_TIME: "30000"
-  HOST_LIST: orders-service.default.svc.cluster.local:8080,shipping-service.default.svc.cluster.local:8080,gestionepagamenti.default.svc.cluster.local:8080,fault-detector-hb.default.svc.cluster.local:1234
+  HOST_LIST: orders-service.default.svc.cluster.local:8080,shipping-service.default.svc.cluster.local:8080,gestionepagamenti.default.svc.cluster.local:8080,fault-detector-hb.default.svc.cluster.local:8080
 
