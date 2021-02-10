@@ -80,7 +80,7 @@ spec:
                 name: orders-service-db-secret-file
       containers:
         - name: orders-service
-          image: ire97/orders_management:v9
+          image: ire97/orders_management:v10
           ports:
             - containerPort: 8080
           envFrom:
