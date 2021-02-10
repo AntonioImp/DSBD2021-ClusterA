@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: fake-products-service
-          image: ire97/fake_products:v5
+          image: ire97/fake_products:v6
           ports:
             - containerPort: 8080
           envFrom:
