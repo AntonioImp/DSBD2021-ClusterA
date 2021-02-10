@@ -70,6 +70,13 @@ x-common-php-variables: &common-php-variables
   MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   MYSQL_USER: ${MYSQL_USER}
 
+x-mongo-secrets-orders: &mongo-credentials-orders
+  MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+  MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+  MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+  MONGODB_HOSTNAME: ${MONGODB_HOSTNAME}
+  MONGODB_PORT: ${MONGODB_PORT}
+
 services:
 
   payment-microservice:
@@ -202,10 +209,34 @@ services:
       FDHBPERIOD: ${FDHBPERIOD}
     ports:
       - "8080:8080"
-
-
+      
+    orders-service-db:
+    image: mongo
+    restart: always
+    environment:
+     MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+     MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-db-data-orders:/data/db
+    
+    orders_management:
+    image: ire97/orders_management:v9
+    ports:
+      - 8080:8080
+    restart: always
+    environment:
+      <<:  *mongo-credentials-orders
+      KAFKA_GROUP_ID: ${KAFKA_GROUP_ID}
+      KAFKA_ADDRESS: ${KAFKA_ADDRESS}
+      KAFKA_TOPIC_LOGGING: ${KAFKA_TOPIC_LOGGING}
+      KAFKA_TOPIC_ORDERS: ${KAFKA_TOPIC_ORDERS}
+      KAFKA_TOPIC_NOTIFICATION: ${KAFKA_TOPIC_NOTIFICATION}
+      KAFKA_TOPIC_INVOICING: ${KAFKA_TOPIC_INVOICING}
 
 volumes:
   mystorage:
   mongodb-data-volume:
   mongo-db-data-shipping:
+  mongo-db-data-orders:
