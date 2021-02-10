@@ -20,9 +20,9 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9092
-              name: kafkabroker-port
+              name: plaintext
             - containerPort: 9999
-              name: kafkabroker-monitor
+              name: jmx
           envFrom:
             - configMapRef:
                 name: kafka-conf
