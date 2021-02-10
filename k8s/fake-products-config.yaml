@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: fake-products-env-file
 data:
+  STATUS: 0 #Variabile 0 || !=0
   KAFKA_ADDRESS: kafkabroker:9092
   KAFKA_GROUP_ID: fake-products-group
   KAFKA_TOPIC_ORDERS: orders
