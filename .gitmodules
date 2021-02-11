@@ -19,6 +19,3 @@
 [submodule "PingAckFD1"]
 	path = PingAckFD1
 	url = https://github.com/IngRaffaeleMineo/Progetto5B-HeartBeat.git
-[submodule "ProgDSDB_HBFaultDKU"]
-	path = ProgDSDB_HBFaultDKU
-	url = https://github.com/2875apapa/ProgDSDB_HBFaultDKU.git
