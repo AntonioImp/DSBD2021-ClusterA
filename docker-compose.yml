@@ -198,7 +198,7 @@ services:
       - kafka
 
   fault-detector-hb:
-    image: 2875apapa/fdhb:v1
+    image: 2875apapa/fdhb:v2
     <<: *common-services-config
     build:
       context: .
