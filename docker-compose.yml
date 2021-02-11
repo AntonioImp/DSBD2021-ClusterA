@@ -243,7 +243,7 @@ services:
     environment:
       STATUS: ${STATUS} #Variabile 0 || !=0
       KAFKA_ADDRESS: ${KAFKA_ADDRESS}
-      KAFKA_GROUP_ID: ${KAFKA_GROUP_ID}
+      KAFKA_GROUP_ID: ${KAFKA_GROUP_ID_FAKE}
       KAFKA_TOPIC_ORDERS: ${KAFKA_TOPIC_ORDERS}
 
 volumes:
