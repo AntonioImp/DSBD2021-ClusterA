@@ -234,6 +234,17 @@ services:
       KAFKA_TOPIC_ORDERS: ${KAFKA_TOPIC_ORDERS}
       KAFKA_TOPIC_NOTIFICATION: ${KAFKA_TOPIC_NOTIFICATION}
       KAFKA_TOPIC_INVOICING: ${KAFKA_TOPIC_INVOICING}
+      
+    fake-products:
+    image: ire97/fake_products:v7
+    ports:
+      - 8080:8080
+    restart: always
+    environment:
+      STATUS: ${STATUS} #Variabile 0 || !=0
+      KAFKA_ADDRESS: ${KAFKA_ADDRESS}
+      KAFKA_GROUP_ID: ${KAFKA_GROUP_ID}
+      KAFKA_TOPIC_ORDERS: ${KAFKA_TOPIC_ORDERS}
 
 volumes:
   mystorage:
