@@ -65,7 +65,7 @@ storage ProdottiDBvolume
 storage Pagamenti2DBvolume
 storage OrdiniDBvolume
 
-endUser --_> ApiGateway : http://clustera.dsbd.2021.it
+endUser --_> ApiGateway : http://clustera.dsbd2021.it
 
 ApiGateway --_> Pagamenti1
 ApiGateway --_> ShippingSystem
