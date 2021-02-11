@@ -110,29 +110,29 @@ FaultDetectors .. FaultDetectors
     Al fine di verificare il corretto funzionamento dei vari microservizi e delle varie interazioni i passaggi da
     seguire sono i successivi:
     
-    1) Il microservizio ORDINI al momento della POST che riguarda l’inserimento di un nuovo ordine nel
-        database, invia un messaggio sul topic ORDERS con chiave ORDER_COMPLETED.
-        
-        curl -X POST --header "Content-Type: application/json" --header "Accept:application/json" --
-        header "X-User-ID: 0" http://clustera.dsbd2021.it/order/orders -d '{"orders": [{"product_id": 1,
-        "quantity": 10, "price": 10.00}, { "product_id": 2, "quantity": 20, "price": 10.00}],
-        "addressShipment": "Via1", "addressBilling": "Via2"}'
-        
-        I consumatori del messaggio sono rispettivamente il microservizio PRODUCTS e SHIPPING.
-        
-    2) Nel momento in cui viene consumato correttamente il messaggio da parte di PRODUCTS,
-        conseguentemente ne produrrà un altro sul topic ORDERS con chiave ORDER_VALIDATION.
-        I relativi consumatori saranno i microservizi ORDERS e SPEDIZIONI.
-        
-    3) I microservizi PAYMENT (1-2) produrranno in maniera separata un messaggio sul topic ORDER con
-        chiave ORDER_PAID.
-        #INSERIRE CURL CORRISPONDENTE
-        Il consumatore del messaggio sarà il microservizio ORDERS.
-        
-    4) Nel momento i dati ricevuti non hanno nessuna corrispondenza all’interno del database riguardo
-        l’orderId, userId e amountPaid, verrà prodotto un messaggio sul topic INVOCING con chiave
-        ORDER_PAID.
-        Il consumatore del messaggio sarà il microservizio SHIPPING.
+        1) Il microservizio ORDINI al momento della POST che riguarda l’inserimento di un nuovo ordine nel
+            database, invia un messaggio sul topic ORDERS con chiave ORDER_COMPLETED.
+
+            curl -X POST --header "Content-Type: application/json" --header "Accept:application/json" --
+            header "X-User-ID: 0" http://clustera.dsbd2021.it/order/orders -d '{"orders": [{"product_id": 1,
+            "quantity": 10, "price": 10.00}, { "product_id": 2, "quantity": 20, "price": 10.00}],
+            "addressShipment": "Via1", "addressBilling": "Via2"}'
+
+            I consumatori del messaggio sono rispettivamente il microservizio PRODUCTS e SHIPPING.
+
+        2) Nel momento in cui viene consumato correttamente il messaggio da parte di PRODUCTS,
+            conseguentemente ne produrrà un altro sul topic ORDERS con chiave ORDER_VALIDATION.
+            I relativi consumatori saranno i microservizi ORDERS e SPEDIZIONI.
+
+        3) I microservizi PAYMENT (1-2) produrranno in maniera separata un messaggio sul topic ORDER con
+            chiave ORDER_PAID.
+            #INSERIRE CURL CORRISPONDENTE
+            Il consumatore del messaggio sarà il microservizio ORDERS.
+
+        4) Nel momento i dati ricevuti non hanno nessuna corrispondenza all’interno del database riguardo
+            l’orderId, userId e amountPaid, verrà prodotto un messaggio sul topic INVOCING con chiave
+            ORDER_PAID.
+            Il consumatore del messaggio sarà il microservizio SHIPPING.
         
     Al fine di verificare il corretto inserimento degli elementi nel database, vengono utilizzate le seguenti curl di
     supporto:
