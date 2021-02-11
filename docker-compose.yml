@@ -222,7 +222,7 @@ services:
       - mongo-db-data-orders:/data/db
     
     orders_management:
-    image: ire97/orders_management:v9
+    image: ire97/orders_management:v10
     ports:
       - 8080:8080
     restart: always
