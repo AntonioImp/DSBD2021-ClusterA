@@ -142,11 +142,11 @@ FaultDetectors .. FaultDetectors
                     &mc_gross_1=12.34&txn_type=web_accept&txn_id=165345880&notify_version=2.1&auction_buyer_id=SomeFancyID&for_auction=TRUE
                     &custom=xyz123&invoice=60270d0f13098845f5e1511e&test_ipn=1&verify_sign=ADuIyIR0o6rLFJjTZ50BFLtfmE0QA7E.hF10j0kbUqzPStL5nsSXEESz
 
-                Dove verranno rispettivamente modificati i seguenti parametri INVOICE (orderId), PAYER_ID (userId) e mc_gross (amountPaid) e renderli corrispondenti a inseriti dal microservizio ORDERS.
+                Dove verranno rispettivamente modificati i seguenti parametri INVOICE (orderId), PAYER_ID (userId) e mc_gross (amountPaid) e renderli corrispondenti a quelli inseriti dal microservizio ORDERS.
 
                 Il consumatore del messaggio sarà il microservizio ORDERS.
 
-        4) Nel momento in cui i dati ricevuti hanno una corrispondenza all’interno del database riguardo
+        4) Se i dati ricevuti da ORDERS hanno una corrispondenza all’interno del database riguardo
             l’orderId, userId e amountPaid, verrà prodotto un messaggio sul topic INVOICING con chiave
             ORDER_PAID.
             Il consumatore del messaggio sarà il microservizio SHIPPING.
