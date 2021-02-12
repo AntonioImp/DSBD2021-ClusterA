@@ -222,7 +222,7 @@ services:
       - mongo-db-data-orders:/data/db
     
     orders_management:
-    image: ire97/orders_management:v10
+    image: ire97/orders_management:v11
     ports:
       - 8080:8080
     restart: always
@@ -236,7 +236,7 @@ services:
       KAFKA_TOPIC_INVOICING: ${KAFKA_TOPIC_INVOICING}
       
     fake-products:
-    image: ire97/fake_products:v7
+    image: ire97/fake_products:v8
     ports:
       - 8080:8080
     restart: always
