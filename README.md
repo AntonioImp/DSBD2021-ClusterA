@@ -160,7 +160,7 @@ FaultDetectors .. FaultDetectors
             
         2) SHIPPING:
             curl -X GET --header "Content-Type: application/json" --header "Accept:application/json" --
-            header "X-User-ID: 0" --data "per_page=1&page=0"
+            header "X-User-ID: 0" --data "per_page=1&page=1"
             http://clustera.dsbd2021.it/shipping/shippings
             
             #ADDOTHERS
