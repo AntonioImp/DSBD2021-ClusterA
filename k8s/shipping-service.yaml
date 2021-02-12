@@ -80,7 +80,7 @@ spec:
                 name: shipping-service-db-secret-file
       containers:
         - name: shipping-service
-          image: andreaarciprete/arciprete-chiavetta-progetto-9b:shipping-manager-v6
+          image: andreaarciprete/arciprete-chiavetta-progetto-9b:shipping-manager-v7
           ports:
             - containerPort: 8080
           envFrom:
