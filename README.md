@@ -146,7 +146,7 @@ FaultDetectors .. FaultDetectors
 
                 Il consumatore del messaggio sarà il microservizio ORDERS.
 
-        4) Nel momento i dati ricevuti non hanno nessuna corrispondenza all’interno del database riguardo
+        4) Nel momento in cui i dati ricevuti hanno una corrispondenza all’interno del database riguardo
             l’orderId, userId e amountPaid, verrà prodotto un messaggio sul topic INVOICING con chiave
             ORDER_PAID.
             Il consumatore del messaggio sarà il microservizio SHIPPING.
