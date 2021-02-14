@@ -23,15 +23,15 @@
     1) Accedere al POD con il comando: -> kubectl exec --stdin --tty <NOME_DEL_POD> -- /bin/sh
     2) Eseguire il comando con le seguenti credenziali di test (di base un replica set di una sola replica che è quella che è contenuta nel POD): -> mongo -u root -p 1208 --eval 'rs.initiate()'
     3) Uscire dal container: -> exit
-
-    ### toDo ###
+    
 ```
     
 ## Hosts config:
 ```
+    minikube addons enable ingress
     echo "$(minikube ip) clustera.dsbd2021.it" | sudo tee -a /etc/hosts
     kubectl create clusterrolebinding cluster-system-anonymous --clusterrole=cluster-admin --user=system:anonymous
-    minikube addons enable ingress
+    
 ```
 
 ## Scheme:
@@ -180,14 +180,16 @@ FaultDetectors .. FaultDetectors
     supporto:
     
         1) ORDERS:
-            curl -X GET --header "X-User-ID: 0" http://clustera.dsbd2021.it/order/orders
-            
+            curl -X GET --header "X-User-ID: 0" "http://clustera.dsbd2021.it/order/orders"
+         
         2) SHIPPING:
-            curl -X GET --header "X-User-ID: 0" --data "per_page=1&page=1"
-            http://clustera.dsbd2021.it/shipping/shippings
+            curl -X GET -H "X-USER-ID: 0" "http://clustera.dsbd2021.it/shipping/shippings?page=1&per_page=1"
             
-        3) GESTIONEPAGAMENTI:
-            curl -X GET --header "X-User-ID: 0" http://clustera.dsbd2021.it/payment1/transactions?fromTimestamp=1613080359&endTimestamp=5613080359
+        3) GESTIONEPAGAMENTI (ID_10, 3A):
+            curl -X GET --header "X-User-ID: 0" "http://clustera.dsbd2021.it/payment1/transactions?fromTimestamp=1613080359&endTimestamp=5613080359"
+         
+        4) PAYMENT (ID_6, 3C):
+            curl -X GET --header "X-User-ID: 0" "http://clustera.dsbd2021.it/payment/transactions?fromTimestamp=1613080359&endTimestamp=5613080359"
             
-            #ADDOTHERS
+            
 ```
