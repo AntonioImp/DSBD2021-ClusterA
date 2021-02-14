@@ -156,11 +156,19 @@ FaultDetectors .. FaultDetectors
                         &payer_id=0&address_name=John%20Smith&address_country=United%20States&address_country_code=US
                         &address_zip=95131&address_state=CA&address_city=San%20Jose&address_street=123%20any%20street&business=seller@paypalsandbox.com
                         &receiver_email=orazio1997@outlook.it&receiver_id=seller@paypalsandbox.com&residence_country=US&item_name=something
-                        &item_number=AK-1234&quantity=1&shipping=3.04&tax=2.02&mc_currency=USD&mc_fee=0.44&mc_gross=20
+                        &item_number=0&quantity=1&shipping=3.04&tax=2.02&mc_currency=USD&mc_fee=0.44&mc_gross=20
                         &mc_gross_1=12.34&txn_type=web_accept&txn_id=165345880&notify_version=2.1&auction_buyer_id=SomeFancyID&for_auction=TRUE
                         &custom=xyz123&invoice=60270d0f13098845f5e1511e&test_ipn=1&verify_sign=ADuIyIR0o6rLFJjTZ50BFLtfmE0QA7E.hF10j0kbUqzPStL5nsSXEESz
                     
                     Dove verranno rispettivamente modificati i seguenti parametri INVOICE (orderId), item_number (userId) e mc_gross (amountPaid) e renderli corrispondenti a quelli inseriti dal microservizio ORDERS.
+                    
+                Endpoint effettivo con utilizzo di paypal:
+                    Far partire ngrok, mettersi nella cartella dove è stato estratto il file e mandare: './ngrok http http://{minikube ip}:{porta gestionepagamenti}' sostituire i campi con i valori corretti.
+                    Prendere il file ipn.py nel submodule 'gestionepagamenti', modificare opportunamente i campi INVOICE (orderId), item_number (userId), amount (amountPaid) e notify_url (inserire il link di ngrok) e renderli corrispondenti a quelli inseriti dal microservizio ORDERS.
+                    Avviare lo script in python, effettuare il login con una delle mail inserite nei commenti (nel file ipn.py) e completare il pagamento.
+                    Attendere che il microservizio venga notificato del pagamento.
+                    A questo punto verranno inseriti i dati del pagamento nella tabella orders e verrà scritto un messaggio su kafka (topic 'orders', key 'order_paid').
+                    
             Il consumatore del messaggio sarà il microservizio ORDERS.
 
         4) Se i dati ricevuti da ORDERS hanno una corrispondenza all’interno del database riguardo
@@ -172,13 +180,14 @@ FaultDetectors .. FaultDetectors
     supporto:
     
         1) ORDERS:
-            curl -X GET --header "Content-Type: application/json" --header "Accept:application/json" --
-            header "X-User-ID: 0" http://clustera.dsbd2021.it/order/orders
+            curl -X GET --header "X-User-ID: 0" http://clustera.dsbd2021.it/order/orders
             
         2) SHIPPING:
-            curl -X GET --header "Content-Type: application/json" --header "Accept:application/json" --
-            header "X-User-ID: 0" --data "per_page=1&page=1"
+            curl -X GET --header "X-User-ID: 0" --data "per_page=1&page=1"
             http://clustera.dsbd2021.it/shipping/shippings
+            
+        3) GESTIONEPAGAMENTI:
+            curl -X GET --header "X-User-ID: 0" http://clustera.dsbd2021.it/payment1/transactions?fromTimestamp=1613080359&endTimestamp=5613080359
             
             #ADDOTHERS
 ```
