@@ -96,7 +96,7 @@ services:
     depends_on:
       - mongo
       - kafka
-      - zookeeper
+      - zoo
 
   mongo:
     image: oraziosantonocito/dsbd.2020-santonocito_palumbo:payment-microservice-db
@@ -174,17 +174,17 @@ services:
       
   shipping-manager:
     <<: *common-services-config
-    build:
-      image: andreaarciprete/arciprete-chiavetta-progetto-9b:shipping-manager123456
+    image: andreaarciprete/arciprete-chiavetta-progetto-9b:shipping-manager-v7
     environment: *mongo-credentials-shipping
     depends_on:
       - mongodb-shipping
+      - kafka
     ports:
      - "8080:8080"
 
   pingack:
-    image: ameliasorrenti/pingack:v1
     <<: *common-services-config
+    image: ameliasorrenti/pingack:v1
     ports:
       - "8080"
     environment:
@@ -195,11 +195,8 @@ services:
       - kafka
 
   fault-detector-hb:
-    image: 2875apapa/fdhb:v2
     <<: *common-services-config
-    build:
-      context: .
-      dockerfile: ProgDSDB_HBFaultDKU/fault_detector/Dockerfile
+    image: 2875apapa/fdhb:v2
     environment:
       KAFKA_ADDRESS: ${KAFKA_ADDRESS}
       KAFKA_LOGGING_TOPIC: ${KAFKA_LOGGING_TOPIC}
@@ -207,7 +204,7 @@ services:
     ports:
       - "8080:8080"
       
-    orders-service-db:
+  orders-service-db:
     image: mongo
     restart: always
     environment:
@@ -218,7 +215,7 @@ services:
     volumes:
       - mongo-db-data-orders:/data/db
     
-    orders_management:
+  orders_management:
     image: ire97/orders_management:v11
     ports:
       - 8080:8080
@@ -232,7 +229,7 @@ services:
       KAFKA_TOPIC_NOTIFICATION: ${KAFKA_TOPIC_NOTIFICATION}
       KAFKA_TOPIC_INVOICING: ${KAFKA_TOPIC_INVOICING}
       
-    fake-products:
+  fake-products:
     image: ire97/fake_products:v8
     ports:
       - 8080:8080
