@@ -143,8 +143,25 @@ FaultDetectors .. FaultDetectors
                     &custom=xyz123&invoice=60270d0f13098845f5e1511e&test_ipn=1&verify_sign=ADuIyIR0o6rLFJjTZ50BFLtfmE0QA7E.hF10j0kbUqzPStL5nsSXEESz
 
                 Dove verranno rispettivamente modificati i seguenti parametri INVOICE (orderId), PAYER_ID (userId) e mc_gross (amountPaid) e renderli corrispondenti a quelli inseriti dal microservizio ORDERS.
-
-                Il consumatore del messaggio sarà il microservizio ORDERS.
+                
+            Per quanto riguarda il microservizio GESTIONEPAGAMENTI (ID_10, 3A):
+                Endpoint di prova con scrittura solo su kafka (topic 'orders', key 'order_paid'):
+                    L'invio dovrà essere effettuato mediante l'utilizzo di TALEND API TESTER.
+                    
+                    POST http://clustera.dsbd2021.it/payment1/fakeorders
+                    Content-Type: application/x-www-form-urlencoded
+                    BODY: 
+                        payment_type=echeck&payment_date=12%3A43%3A29%20Jan%2005%2C%202021%20PST&payment_status=Completed
+                        &address_status=confirmed&payer_status=verified&first_name=John&last_name=Smith&payer_email=buyer@paypalsandbox.com
+                        &payer_id=0&address_name=John%20Smith&address_country=United%20States&address_country_code=US
+                        &address_zip=95131&address_state=CA&address_city=San%20Jose&address_street=123%20any%20street&business=seller@paypalsandbox.com
+                        &receiver_email=orazio1997@outlook.it&receiver_id=seller@paypalsandbox.com&residence_country=US&item_name=something
+                        &item_number=AK-1234&quantity=1&shipping=3.04&tax=2.02&mc_currency=USD&mc_fee=0.44&mc_gross=20
+                        &mc_gross_1=12.34&txn_type=web_accept&txn_id=165345880&notify_version=2.1&auction_buyer_id=SomeFancyID&for_auction=TRUE
+                        &custom=xyz123&invoice=60270d0f13098845f5e1511e&test_ipn=1&verify_sign=ADuIyIR0o6rLFJjTZ50BFLtfmE0QA7E.hF10j0kbUqzPStL5nsSXEESz
+                    
+                    Dove verranno rispettivamente modificati i seguenti parametri INVOICE (orderId), item_number (userId) e mc_gross (amountPaid) e renderli corrispondenti a quelli inseriti dal microservizio ORDERS.
+            Il consumatore del messaggio sarà il microservizio ORDERS.
 
         4) Se i dati ricevuti da ORDERS hanno una corrispondenza all’interno del database riguardo
             l’orderId, userId e amountPaid, verrà prodotto un messaggio sul topic INVOICING con chiave
